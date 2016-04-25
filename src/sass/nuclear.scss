@@ -1,12 +1,10 @@
-@import "mixins";
-@import "reset";
+$breakpoints: (
+  tablet:  "768px",
+  desktop: "1024px"
+);
 
-// PARTIALS
-
-@import "vars";
-@import "base";
-@import "z-index";
-
-// COMPONENTS
-
-// SECTIONS
+@each $label, $size in $breakpoints {
+  .example {
+    #{ $label }: $size;
+  }
+}
