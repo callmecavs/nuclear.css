@@ -3,8 +3,135 @@ $breakpoints: (
   desktop: "1024px"
 );
 
-@each $label, $size in $breakpoints {
-  .example {
-    #{ $label }: $size;
-  }
+$nuclear: (
+  align-items: (
+    prefix: "ai",
+    values: (
+      b:  "baseline",
+      c:  "center",
+      fe: "flex-end",
+      fs: "flex-start",
+      s:  "stretch"
+    )
+  ),
+
+  background-image: (
+    prefix: "bi",
+    values: (
+      n: "none"
+    )
+  ),
+
+  background-position: (
+    prefix: "bp",
+    values: (
+      c: "center"
+    )
+  ),
+
+  background-repeat: (
+    prefix: "br",
+    values: (
+      n: "no-repeat"
+    )
+  ),
+
+  background-size: (
+    prefix: "bs",
+    values: (
+      c: "cover"
+    )
+  ),
+
+  cursor: (
+    prefix: "c",
+    values: (
+      p: "pointer"
+    )
+  ),
+
+  display: (
+    prefix: "d",
+    values: (
+      b: "block",
+      f: "flex",
+      n: "none"
+    )
+  ),
+
+  flex-direction: (
+    prefix: "fd",
+    values: (
+      c:  "column",
+      cr: "column-reverse",
+      r:  "row",
+      rr: "row-reverse"
+    )
+  ),
+
+  flex-wrap: (
+    prefix: "fw",
+    values: (
+      n:  "no-wrap",
+      w:  "wrap",
+      wr: "wrap-reverse"
+    )
+  ),
+
+  float: (
+    prefix: "f",
+    values: (
+      l: "left",
+      n: "none",
+      r: "right"
+    )
+  ),
+
+  justify-content: (
+    prefix: "jc",
+    values: (
+      c:  "center",
+      fe: "flex-end",
+      fs: "flex-start",
+      sa: "space-around",
+      sb: "space-between"
+    )
+  ),
+
+  position: (
+    prefix: "p",
+    values: (
+      a: "absolute",
+      r: "relative",
+      s: "static"
+    )
+  ),
+
+  text-align: (
+    prefix: "ta",
+    values: (
+      c: "center",
+      l: "left",
+      r: "right"
+    )
+  ),
+
+  text-transform: (
+    prefix: "tt",
+    values: (
+      u: "uppercase"
+    )
+  )
+);
+
+// generate mobile classes
+
+@each $prop, $config in $nuclear {
+
 }
+
+// generate breakpoint classes
+
+// @each $label, $size in $breakpoints {
+
+// }
