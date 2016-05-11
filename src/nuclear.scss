@@ -127,7 +127,11 @@ $nuclear: (
 // generate mobile classes
 
 @each $prop, $config in $nuclear {
-
+  @each $prefix, $value in map-get($config, "values") {
+    .#{ map-get($config, "prefix") }#{ $prefix } {
+      #{ $prop }: #{ $value };
+    }
+  }
 }
 
 // generate breakpoint classes
