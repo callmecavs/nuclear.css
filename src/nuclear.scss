@@ -1,12 +1,13 @@
-// classes are generated unprefixed, for mobile-first
-// and then again for each breakpoint/corresponding prefix
+// classes are first generated unprefixed,
+// and then again for each breakpoint/corresponding prefix,
+// favoring mobile-first development
 
 $breakpoints: (
   "t": "768px",     // tablet
   "d": "1024px"     // desktop
 );
 
-// NOTE: keys/values that appear in the compiled CSS are wrapped in quotes,
+// keys/values that appear in the compiled CSS are wrapped in quotes,
 // to allow for the inclusion of numbers
 
 $nuclear: (
