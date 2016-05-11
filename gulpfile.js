@@ -38,8 +38,8 @@ gulp.task('html', () => {
 // sass
 
 const processors = [
-  prefixer({ browsers: 'last 2 versions' }),
-  cssnano({ safe: true })
+  prefixer({ browsers: 'last 2 versions' })
+  // cssnano({ safe: true })
 ]
 
 gulp.task('sass', () => {
