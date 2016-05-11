@@ -1,6 +1,6 @@
 $breakpoints: (
-  tablet:  "768px",
-  desktop: "1024px"
+  t: "768px",
+  d: "1024px"
 );
 
 $nuclear: (
@@ -136,6 +136,14 @@ $nuclear: (
 
 // generate breakpoint classes
 
-// @each $label, $size in $breakpoints {
-
-// }
+@each $label, $size in $breakpoints {
+  @media screen and (min-width: $size) {
+    @each $prop, $config in $nuclear {
+      @each $prefix, $value in map-get($config, "values") {
+        .#{ $label }-#{ map-get($config, "prefix") }#{ $prefix } {
+          #{ $prop }: #{ $value };
+        }
+      }
+    }
+  }
+}
