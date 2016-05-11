@@ -1,4 +1,3 @@
-const prefixer = require('autoprefixer')
 const cssnano  = require('cssnano')
 const del      = require('del')
 const gulp     = require('gulp')
@@ -33,7 +32,7 @@ const processors = [
 gulp.task('sass', () => {
   return gulp.src('src/nuclear.scss')
     .pipe(plumber({ errorHandler: onError }))
-    .pipe(sass())
+    .pipe(sass({ outputStyle: 'expanded' }))
     .pipe(gulp.dest('dist'))
     .pipe(postcss(processors))
     .pipe(rename('nuclear.min.css'))
