@@ -1,130 +1,136 @@
+// classes are generated unprefixed, for mobile-first
+// and then again for each breakpoint/corresponding prefix
+
 $breakpoints: (
-  t: "768px",
-  d: "1024px"
+  "t": "768px",     // tablet
+  "d": "1024px"     // desktop
 );
 
+// NOTE: keys/values that appear in the compiled CSS are wrapped in quotes,
+// to allow for the inclusion of numbers
+
 $nuclear: (
-  align-items: (
+  "align-items": (
     prefix: "ai",
     values: (
-      b:  "baseline",
-      c:  "center",
-      fe: "flex-end",
-      fs: "flex-start",
-      s:  "stretch"
+      "b":  "baseline",
+      "c":  "center",
+      "fe": "flex-end",
+      "fs": "flex-start",
+      "s":  "stretch"
     )
   ),
 
-  background-image: (
+  "background-image": (
     prefix: "bi",
     values: (
-      n: "none"
+      "n": "none"
     )
   ),
 
-  background-position: (
+  "background-position": (
     prefix: "bp",
     values: (
-      c: "center"
+      "c": "center"
     )
   ),
 
-  background-repeat: (
+  "background-repeat": (
     prefix: "br",
     values: (
-      n: "no-repeat"
+      "n": "no-repeat"
     )
   ),
 
-  background-size: (
+  "background-size": (
     prefix: "bs",
     values: (
-      c: "cover"
+      "c": "cover"
     )
   ),
 
-  cursor: (
+  "cursor": (
     prefix: "c",
     values: (
-      p: "pointer"
+      "p": "pointer"
     )
   ),
 
-  display: (
+  "display": (
     prefix: "d",
     values: (
-      b: "block",
-      f: "flex",
-      n: "none"
+      "b": "block",
+      "f": "flex",
+      "n": "none"
     )
   ),
 
-  flex-direction: (
+  "flex-direction": (
     prefix: "fd",
     values: (
-      c:  "column",
-      cr: "column-reverse",
-      r:  "row",
-      rr: "row-reverse"
+      "c":  "column",
+      "cr": "column-reverse",
+      "r":  "row",
+      "rr": "row-reverse"
     )
   ),
 
-  flex-wrap: (
+  "flex-wrap": (
     prefix: "fw",
     values: (
-      n:  "no-wrap",
-      w:  "wrap",
-      wr: "wrap-reverse"
+      "n":  "no-wrap",
+      "w":  "wrap",
+      "wr": "wrap-reverse"
     )
   ),
 
-  float: (
+  "float": (
     prefix: "f",
     values: (
-      l: "left",
-      n: "none",
-      r: "right"
+      "l": "left",
+      "n": "none",
+      "r": "right"
     )
   ),
 
-  justify-content: (
+  "justify-content": (
     prefix: "jc",
     values: (
-      c:  "center",
-      fe: "flex-end",
-      fs: "flex-start",
-      sa: "space-around",
-      sb: "space-between"
+      "c":  "center",
+      "fe": "flex-end",
+      "fs": "flex-start",
+      "sa": "space-around",
+      "sb": "space-between"
     )
   ),
 
-  position: (
+  "position": (
     prefix: "p",
     values: (
-      a: "absolute",
-      r: "relative",
-      s: "static"
+      "a": "absolute",
+      "r": "relative",
+      "s": "static"
     )
   ),
 
-  text-align: (
+  "text-align": (
     prefix: "ta",
     values: (
-      c: "center",
-      l: "left",
-      r: "right"
+      "c": "center",
+      "l": "left",
+      "r": "right"
     )
   ),
 
-  text-transform: (
+  "text-transform": (
     prefix: "tt",
     values: (
-      u: "uppercase"
+      "u": "uppercase"
     )
   )
 );
 
-// generate mobile classes
+// mobile classes generation
 
 @each $prop, $config in $nuclear {
   @each $prefix, $value in map-get($config, "values") {
@@ -134,7 +140,7 @@ $nuclear: (
   }
 }
 
-// generate breakpoint classes
+// breakpoint classes generation
 
 @each $label, $size in $breakpoints {
   @media screen and (min-width: $size) {
