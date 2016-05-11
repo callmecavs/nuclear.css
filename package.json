@@ -6,13 +6,13 @@
   "license": "",
 
   "devDependencies": {
-    "autoprefixer":               "*",
-    "cssnano":                    "*",
-    "del":                        "*",
-    "gulp":                       "*",
-    "gulp-plumber":               "*",
-    "gulp-postcss":               "*",
-    "gulp-sass":                  "*",
-    "node-notifier":              "*"
+    "cssnano":       "*",
+    "del":           "*",
+    "gulp":          "*",
+    "gulp-plumber":  "*",
+    "gulp-postcss":  "*",
+    "gulp-rename":   "*",
+    "gulp-sass":     "*",
+    "node-notifier": "*"
   }
 }

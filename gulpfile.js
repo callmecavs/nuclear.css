@@ -4,6 +4,7 @@ const del      = require('del')
 const gulp     = require('gulp')
 const plumber  = require('gulp-plumber')
 const postcss  = require('gulp-postcss')
+const rename   = require('gulp-rename')
 const sass     = require('gulp-sass')
 const notifier = require('node-notifier')
 
@@ -26,23 +27,23 @@ gulp.task('clean', () => del('dist'))
 // sass
 
 const processors = [
-  prefixer({ browsers: 'last 2 versions' })
-  // cssnano({ safe: true })
+  cssnano({ safe: true })
 ]
 
 gulp.task('sass', () => {
-  return gulp.src('src/sass/style.scss')
+  return gulp.src('src/nuclear.scss')
     .pipe(plumber({ errorHandler: onError }))
-    .pipe(maps.init())
     .pipe(sass())
+    .pipe(gulp.dest('dist'))
     .pipe(postcss(processors))
+    .pipe(rename('nuclear.min.css'))
     .pipe(gulp.dest('dist'))
 })
 
 // watch
 
 gulp.task('watch', () => {
-  gulp.watch('src/sass/**/*.scss', ['sass', reload])
+  gulp.watch('src/nuclear.scss', ['sass'])
 })
 
 // build and default tasks
