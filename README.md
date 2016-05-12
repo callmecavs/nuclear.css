@@ -12,7 +12,7 @@ Nuclear provides the basis for **generating a customized set of these classes**,
 
 Look at the [source](https://github.com/callmecavs/nuclear.css/blob/master/src/nuclear.scss) file, and the unminified [distribution](https://github.com/callmecavs/nuclear.css/blob/master/dist/nuclear.css) file, to understand how the class names are generated.
 
-Edit and recompile the source - using the [Gulpfile](https://github.com/callmecavs/nuclear.css/blob/master/gulpfile.js) if your prefer - to create your own set of classes.
+Edit and recompile the source - using the [Gulpfile](https://github.com/callmecavs/nuclear.css/blob/master/gulpfile.js) if you prefer - to create your own set of classes.
 
 ## License
 
